@@ -25,4 +25,8 @@ public class MatchService {
     public List<Match> getMatchesByStatus(String status) {
         return allMatches.stream().filter(match -> match.getStatus().equalsIgnoreCase(status)).collect(Collectors.toList());
     }
+
+    public List<Match> getMatchesByTeam(String teamName) {
+        return allMatches.stream().filter(match -> match.getHomeTeam().contains(teamName) || match.getAwayTeam().contains(teamName)).collect(Collectors.toList());
+    }
 }

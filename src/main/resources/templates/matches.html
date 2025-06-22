@@ -5,6 +5,13 @@
     </head>
     <body>
         <h1>Matches</h1>
+
+        <h2>Filter by Team Name</h2>
+        <form method="get" action="/matches/filter">
+            <input type="text" name="teamName" placeholder="Enter team name" th:value="${teamName}">
+            <button type="submit">Search</button>
+        </form>
+
         <nav>
             <a href="/matches">All</a> |
             <a href="/matches/live">Live</a> |

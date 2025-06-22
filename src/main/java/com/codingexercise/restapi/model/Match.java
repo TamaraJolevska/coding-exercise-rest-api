@@ -1,8 +1,13 @@
 package com.codingexercise.restapi.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Match {
+    @JsonProperty("status")
     private String status;
+    @JsonProperty("home_team")
     private String homeTeam;
+    @JsonProperty("away_team")
     private String awayTeam;
 
     public Match() {}
