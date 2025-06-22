@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Match List</title>
+    </head>
+    <body>
+        <h1>Matches</h1>
+        <nav>
+            <a href="/matches">All</a> |
+            <a href="/matches/live">Live</a> |
+            <a href="/matches/completed">Completed</a>
+        </nav>
+
+        <ul>
+            <li th:each="match : ${matches}">
+                <b th:text="${match.homeTeam}"></b> vs <b th:text="${match.awayTeam}"></b>
+                — <span th:text="${match.status}"></span>
+            </li>
+        </ul>
+    </body>
+</html>
