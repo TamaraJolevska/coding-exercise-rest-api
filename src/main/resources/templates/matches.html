@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Match List</title>
+        <link th:href="@{/matches-stylesheet.css}" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Matches</h1>
+
+        <label>Filter by Team Name</label>
+
+        <form method="get" action="/matches/filter">
+            <input type="text" name="teamName" placeholder="Enter team name" th:value="${teamName}">
+            <button type="submit">Search</button>
+        </form>
+
+        <nav>
+            <a href="/matches">All</a> |
+            <a href="/matches/live">Live</a> |
+            <a href="/matches/completed">Completed</a>
+        </nav>
+
+        <table> 
+            <tr>
+                <th>Home team</th>
+                <th>Away team</th>
+                <th>Home score</th>
+                <th>Away score</th>
+                <th>Status</th>
+                <th>Start time</th>
+            </tr>
+            <tr th:each="match : ${matches}">
+                <td th:text="${match.homeTeam}"></td>
+                <td th:text="${match.awayTeam}"></td>
+                <td th:text="${match.homeScore}"></td>
+                <td th:text="${match.awayScore}"></td>
+                <td th:text="${match.status}"></td>
+                <td th:text="${#temporals.format(match.startTime, 'dd.MM.yyyy HH:mm:ss')}"></td>
+            </tr>
+        </table>
+    </body>
+</html>
