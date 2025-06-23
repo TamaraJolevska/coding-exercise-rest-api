@@ -56,7 +56,7 @@ http://localhost:9090/matches
 
 Access the Swagger documentation using the following url after deploying the application: http://localhost:9090/swagger-ui/index.html
 
-### 6. Test the unit tests in ResapiApplicationTests.java
+### 6. Test the unit tests in RestapiApplicationTests.java
 
 ### 7. Test caching and scheduled job
 The scheduled job is done every minute - debug log example: Data refreshed 2025-06-23T22:11:00.095728900
