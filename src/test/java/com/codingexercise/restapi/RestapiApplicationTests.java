@@ -2,6 +2,8 @@ package com.codingexercise.restapi;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.time.Instant;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -25,9 +27,9 @@ class RestapiApplicationTests {
 			@Override
 			public List<Match> fetchAllMatches() {
 				return List.of(
-					new Match("Sacramento Kings", "Oklahoma City Thunder", "COMPLETED"),
-					new Match("Portland Trail Blazers", "Milwaukee Bucks", "COMPLETED"),
-					new Match("Denver Nuggets", "Brooklyn Nets", "LIVE")
+					new Match("Sacramento Kings", "Oklahoma City Thunder", "COMPLETED", Instant.now(), 113L, 103L),
+					new Match("Portland Trail Blazers", "Milwaukee Bucks", "COMPLETED", Instant.now(), 113L, 103L),
+					new Match("Denver Nuggets", "Brooklyn Nets", "LIVE", Instant.now(), 113L, 103L)
 				);
 			}
 		};
