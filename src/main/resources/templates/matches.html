@@ -2,11 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Match List</title>
+        <link th:href="@{/matches-stylesheet.css}" rel="stylesheet">
     </head>
     <body>
         <h1>Matches</h1>
 
-        <h2>Filter by Team Name</h2>
+        <label>Filter by Team Name</label>
+
         <form method="get" action="/matches/filter">
             <input type="text" name="teamName" placeholder="Enter team name" th:value="${teamName}">
             <button type="submit">Search</button>
@@ -18,11 +20,17 @@
             <a href="/matches/completed">Completed</a>
         </nav>
 
-        <ul>
-            <li th:each="match : ${matches}">
-                <b th:text="${match.homeTeam}"></b> vs <b th:text="${match.awayTeam}"></b>
-                — <span th:text="${match.status}"></span>
-            </li>
-        </ul>
+        <table> 
+            <tr>
+                <th>Home team</th>
+                <th>Away team</th>
+                <th>Status</th>
+            </tr>
+            <tr th:each="match : ${matches}">
+                <td th:text="${match.homeTeam}"></td>
+                <td th:text="${match.awayTeam}"></td>
+                <td th:text="${match.status}"></td>
+            </tr>
+        </table>
     </body>
 </html>
