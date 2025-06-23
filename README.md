@@ -26,6 +26,7 @@ src/
 ```
 
 ### OPTION A:
+Prerequisites - Java 17 (https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html#amazon-corretto-yum-urls)
 
 To test the application without the source code, download the .jar file from the releases or create a .jar file using the command ./mvnw clean package.
 Run the .jar file in the command prompt using the command:
