@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 public class MatchClient {
-    @Value("${external.api.base-url}")
+    @Value("${external.api.base.url}")
     private String baseUrl;
 
     private final RestTemplate restTemplate = new RestTemplate();
